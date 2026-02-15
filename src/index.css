@@ -1,0 +1,328 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000; /* negro profundo */
+}
+
+
+
+#root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(0, 200, 255, 0.6) 0%, transparent 40%),
+    radial-gradient(circle at 60% 40%, rgba(0, 120, 255, 0.5) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(100, 0, 255, 0.4) 0%, transparent 55%);
+  filter: blur(80px);
+  opacity: 0.9;
+  z-index: 0;
+}
+
+#root::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(1px 1px at 80% 60%, white, transparent),
+    radial-gradient(1.5px 1.5px at 50% 20%, white, transparent),
+    radial-gradient(1px 1px at 30% 70%, white, transparent),
+    radial-gradient(2px 2px at 70% 40%, white, transparent),
+    radial-gradient(1px 1px at 60% 80%, white, transparent);
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+
+@keyframes nebulaMove {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.1) translate(-10px, 10px); }
+  100% { transform: scale(1) translate(0, 0); }
+}
+
+#root::before {
+  animation: nebulaMove 20s ease-in-out infinite;
+}
+
+
+h1 {
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+canvas {
+  position: absolute;
+  z-index: 1;
+}
+
+.ui-container {
+  position: relative;
+  z-index: 2;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+}
+
+
+
+.outline-text {
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+
+.magical-text {
+  color: #ffd6f3;
+  text-shadow:
+    0 0 10px #ff8be3,
+    0 0 25px #d946ef,
+    0 0 40px rgba(255, 120, 200, 0.4);
+}
+
+.particle {
+  opacity: 0.5;
+}
+
+.book {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+.tulips-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tulip-side img {
+  filter: drop-shadow(0 0 10px rgba(255, 120, 180, 0.3));
+  position: absolute;
+  bottom: 0;
+  pointer-events: none;
+  transform-origin: bottom center;
+}
+
+
+/* LADO IZQUIERDO */
+
+.left img:nth-child(1) {
+  left: 0px;
+  transform: rotate(-8deg);
+}
+
+.left img:nth-child(2) {
+  left: 30px;
+  transform: rotate(-3deg);
+}
+
+.left img:nth-child(3) {
+  left: 60px;
+  transform: rotate(4deg);
+}
+
+.left img:nth-child(4) {
+  left: 90px;
+  transform: rotate(-6deg);
+}
+
+.left img:nth-child(5) {
+  left: 120px;
+  transform: rotate(3deg);
+}
+
+
+/* LADO DERECHO */
+
+.right img:nth-child(1) {
+  right: 0px;
+  transform: rotate(8deg);
+}
+
+.right img:nth-child(2) {
+  right: 30px;
+  transform: rotate(3deg);
+}
+
+.right img:nth-child(3) {
+  right: 60px;
+  transform: rotate(-4deg);
+}
+
+.right img:nth-child(4) {
+  right: 90px;
+  transform: rotate(6deg);
+}
+
+.right img:nth-child(5) {
+  right: 120px;
+  transform: rotate(-3deg);
+}
+
+
+
+
+/* MOVIMIENTO DIFERENTE PARA CADA FLOR */
+
+.tulip-side img:nth-child(1) {
+  --r: -8deg;
+  --amp: 3deg;
+  animation: sway 3s ease-in-out infinite;
+}
+
+.tulip-side img:nth-child(2) {
+  --r: -3deg;
+  --amp: 2deg;
+  animation: sway 4.5s ease-in-out infinite;
+}
+
+.tulip-side img:nth-child(3) {
+  --r: 4deg;
+  --amp: 4deg;
+  animation: sway 3.8s ease-in-out infinite;
+}
+
+.tulip-side img:nth-child(4) {
+  --r: -6deg;
+  --amp: 5deg;
+  animation: sway 5s ease-in-out infinite;
+}
+
+.tulip-side img:nth-child(5) {
+  --r: 3deg;
+  --amp: 2deg;
+  animation: sway 3.2s ease-in-out infinite;
+}
+
+.tulip-side img:nth-child(6) {
+  --r: 6deg;
+  --amp: 4deg;
+  animation: sway 4.8s ease-in-out infinite;
+}
+
+.tulip-side img:nth-child(7) {
+  --r: -5deg;
+  --amp: 3deg;
+  animation: sway 3.6s ease-in-out infinite;
+}
+
+
+/* Base tulip */
+.tulip {
+  margin: -5px;
+  /* antes -20px */
+  animation: sway 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+
+/* Tamaños */
+.tulip.small {
+  width: 80px;
+}
+
+.tulip.medium {
+  width: 110px;
+}
+
+.tulip.big {
+  width: 140px;
+}
+
+/* Superposición */
+.offset1 {
+  transform: translateX(-15px);
+}
+
+.offset2 {
+  transform: translateX(15px);
+}
+
+/* Movimiento romántico */
+@keyframes sway {
+  0% {
+    transform: rotate(var(--r)) translateY(0px);
+  }
+
+  50% {
+    transform: rotate(calc(var(--r) + var(--amp))) translateY(-6px);
+  }
+
+  100% {
+    transform: rotate(var(--r)) translateY(0px);
+  }
+}
+
+
+
+/* 🔥 tulipanes posicion de abajo */
+.bottom-grass {
+  position: fixed;
+  bottom: -5px;
+  /* más al filo */
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 🔥 Aquí está la magia */
+.grass-flower {
+  margin-left: -60px;
+  /* esto las junta */
+}
+
+/* Tamaños diferentes */
+.grass-flower.small {
+  max-height: 70px;
+}
+
+.grass-flower.medium {
+  max-height: 100px;
+}
+
+.grass-flower.big {
+  max-height: 140px;
+}
+
+/* Movimiento orgánico */
+@keyframes swayGrass {
+  0% {
+    transform: rotate(-2deg) translateY(0px);
+  }
+
+  50% {
+    transform: rotate(2deg) translateY(-6px);
+  }
+
+  100% {
+    transform: rotate(-2deg) translateY(0px);
+  }
+}
+
+.grass-flower:nth-child(odd) {
+  animation: swayGrass 3s ease-in-out infinite;
+}
+
+.grass-flower:nth-child(even) {
+  animation: swayGrass 4.5s ease-in-out infinite;
+}
