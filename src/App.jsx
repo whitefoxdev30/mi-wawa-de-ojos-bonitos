@@ -5,6 +5,7 @@ import { Experience } from "./components/Experience";
 import { UI } from "./components/UI";
 import { Tulips } from "./components/Tulips";
 import { TulipGrass } from "./components/TulipGrass";
+import { SakuraCorners } from "./components/SakuraCorners";
 
 function App() {
   return (
@@ -22,8 +23,8 @@ function App() {
         </group>
       </Canvas>
       <Tulips />
-            <TulipGrass />
-
+      <TulipGrass />
+      <SakuraCorners/>
     </>
   );
 }

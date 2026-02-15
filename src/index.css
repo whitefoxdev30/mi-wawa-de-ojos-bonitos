@@ -3,56 +3,34 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 #root {
   position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: #000; /* negro profundo */
-}
 
+  background: url("/textura/fondo.png") center center / cover no-repeat;
+}
 
 
 #root::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(0, 200, 255, 0.6) 0%, transparent 40%),
-    radial-gradient(circle at 60% 40%, rgba(0, 120, 255, 0.5) 0%, transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(100, 0, 255, 0.4) 0%, transparent 55%);
-  filter: blur(80px);
-  opacity: 0.9;
-  z-index: 0;
+  background: url("/textura/fondo.png") center / cover no-repeat;
+  z-index: -1;
+  animation: fondoFloat 30s ease-in-out infinite alternate;
 }
 
-#root::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(2px 2px at 20% 30%, white, transparent),
-    radial-gradient(1px 1px at 80% 60%, white, transparent),
-    radial-gradient(1.5px 1.5px at 50% 20%, white, transparent),
-    radial-gradient(1px 1px at 30% 70%, white, transparent),
-    radial-gradient(2px 2px at 70% 40%, white, transparent),
-    radial-gradient(1px 1px at 60% 80%, white, transparent);
-  background-repeat: repeat;
-  background-size: 300px 300px;
-  opacity: 0.8;
-  z-index: 1;
+@keyframes fondoFloat {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
 }
 
 
-@keyframes nebulaMove {
-  0% { transform: scale(1) translate(0, 0); }
-  50% { transform: scale(1.1) translate(-10px, 10px); }
-  100% { transform: scale(1) translate(0, 0); }
-}
 
-#root::before {
-  animation: nebulaMove 20s ease-in-out infinite;
-}
 
 
 h1 {
@@ -83,21 +61,48 @@ body {
   -webkit-text-stroke: 1px rgb(255, 255, 255);
 }
 
+
+
+
+
+
+
+
 .magical-text {
-  color: #ffd6f3;
+  position: relative;
+  color: #fff0fa;
   text-shadow:
-    0 0 10px #ff8be3,
-    0 0 25px #d946ef,
-    0 0 40px rgba(255, 120, 200, 0.4);
+    0 0 5px #ffb3f0,
+    0 0 15px #ff66cc,
+    0 0 30px #d946ef,
+    0 0 60px #ff80df,
+    0 0 90px rgba(255, 120, 200, 0.8);
+  animation: glowPulse 3s ease-in-out infinite;
 }
+
+
 
 .particle {
   opacity: 0.5;
 }
 
+
+
+
+
+
+
 .book {
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -174,7 +179,6 @@ body {
   right: 120px;
   transform: rotate(-3deg);
 }
-
 
 
 
@@ -271,6 +275,9 @@ body {
 
 
 
+
+
+
 /* 🔥 tulipanes posicion de abajo */
 .bottom-grass {
   position: fixed;
@@ -326,3 +333,120 @@ body {
 .grass-flower:nth-child(even) {
   animation: swayGrass 4.5s ease-in-out infinite;
 }
+
+
+
+
+
+
+
+
+/* flores de lados cerezos sakura*/
+.sakura {
+  position: fixed;
+  top: 0;
+  pointer-events: none;
+  z-index: 5;
+  max-width: 40vw; /* clave */
+  height: auto;
+}
+
+
+/* LADOS */
+.sakura-left {
+  left: 0;
+}
+
+.sakura-right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+/* VARIACIONES DE TAMAÑO */
+/* ===== VARIACIONES REALISTAS ===== */
+
+.s1  { width: 480px; top: 0px;  animation: sway1 6s  ease-in-out infinite alternate; }
+.s2  { width: 390px; top: 50px; animation: sway2 7s  ease-in-out infinite alternate; }
+.s3  { width: 520px; top: 20px; animation: sway3 8s  ease-in-out infinite alternate; }
+.s4  { width: 340px; top: 70px; animation: sway4 6.5s ease-in-out infinite alternate; }
+
+.s5  { width: 450px; top: 15px; animation: sway5 7.5s ease-in-out infinite alternate; }
+.s6  { width: 310px; top: 80px; animation: sway6 6s  ease-in-out infinite alternate; }
+
+.s7  { width: 500px; top: 5px;  animation: sway2 6.5s ease-in-out infinite alternate; }
+.s8  { width: 370px; top: 60px; animation: sway3 7.2s ease-in-out infinite alternate; }
+.s9  { width: 540px; top: 10px; animation: sway4 8.5s ease-in-out infinite alternate; }
+.s10 { width: 330px; top: 75px; animation: sway1 6.2s ease-in-out infinite alternate; }
+
+.s11 { width: 510px; top: 0px;  animation: sway5 7.8s ease-in-out infinite alternate; }
+.s12 { width: 360px; top: 65px; animation: sway6 6.8s ease-in-out infinite alternate; }
+
+
+
+.s1  { width: clamp(200px, 35vw, 500px); }
+.s2  { width: clamp(180px, 30vw, 420px); }
+.s3  { width: clamp(220px, 38vw, 520px); }
+.s4  { width: clamp(160px, 28vw, 380px); }
+
+.s5  { width: clamp(210px, 34vw, 480px); }
+.s6  { width: clamp(150px, 26vw, 350px); }
+
+.s7  { width: clamp(230px, 36vw, 500px); }
+.s8  { width: clamp(170px, 29vw, 390px); }
+.s9  { width: clamp(240px, 40vw, 540px); }
+.s10 { width: clamp(160px, 27vw, 360px); }
+
+.s11 { width: clamp(220px, 37vw, 510px); }
+.s12 { width: clamp(170px, 30vw, 370px); }
+
+@media (max-width: 768px) {
+  .sakura {
+    max-width: 55vw;
+  }
+
+  .s1, .s3, .s7, .s9, .s11 {
+    width: 45vw;
+  }
+
+  .s2, .s4, .s6, .s8, .s10, .s12 {
+    width: 35vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .sakura {
+    top: -20px;
+  }
+}
+
+/* MOVIMIENTOS DIFERENTES */
+@keyframes sway1 {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(18px) rotate(3deg); }
+}
+
+@keyframes sway2 {
+  0%   { transform: translateY(0px) rotate(-1deg); }
+  100% { transform: translateY(22px) rotate(2deg); }
+}
+
+@keyframes sway3 {
+  0%   { transform: translateY(0px) rotate(1deg); }
+  100% { transform: translateY(16px) rotate(-3deg); }
+}
+
+@keyframes sway4 {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(20px) rotate(4deg); }
+}
+
+@keyframes sway5 {
+  0%   { transform: translateY(0px) rotate(-2deg); }
+  100% { transform: translateY(25px) rotate(1deg); }
+}
+
+@keyframes sway6 {
+  0%   { transform: translateY(0px) rotate(2deg); }
+  100% { transform: translateY(15px) rotate(-4deg); }
+}
+

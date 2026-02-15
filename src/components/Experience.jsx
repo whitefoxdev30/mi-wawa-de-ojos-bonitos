@@ -1,15 +1,16 @@
 import { Environment, Float, OrbitControls } from "@react-three/drei";
 import { Book } from "./Book";
-import MagicParticles from "./MagicParticles";
+import CherryLeaves from "./CherryLeaves";
+
 
 export const Experience = () => {
   return (
     <>
       {/* Fondo mágico */}
-      <color attach="background" args={["#2a003f"]} />
+      <color attach="background" args={["transparent"]} />
 
       {/* Partículas mágicas */}
-      <MagicParticles />
+      <CherryLeaves />
 
       {/* Libro flotando */}
       <Float
