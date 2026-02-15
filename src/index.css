@@ -12,7 +12,7 @@
   overflow: hidden;
 
   /* Fondo base */
-  background-image: url("/textures/fondo.png");
+  background-image: url("textures/fondo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -24,7 +24,7 @@
   position: absolute;
   inset: 0;
 
-  background-image: url("/textures/nubes.png");
+  background-image: url("textures/nubes.png");
   background-size: cover;   /* mejor para responsive */
   background-repeat: no-repeat;
   background-position: center top; /* más natural */

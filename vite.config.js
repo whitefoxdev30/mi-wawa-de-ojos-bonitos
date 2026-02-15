@@ -10,5 +10,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/mi-wawa-de-ojos-bonitos/',
+  base: "/mi-wawa-de-ojos-bonitos/", // 🔥 ESTA LÍNEA ES LA CLAVE
 })

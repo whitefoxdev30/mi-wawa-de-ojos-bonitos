@@ -6,12 +6,12 @@ export default function CherryLeaves() {
   const group = useRef();
 
   const textures = useLoader(THREE.TextureLoader, [
-    "/textures/HOJASCEREZO01.png",
-    "/textures/HOJASCEREZO02.png",
-    "/textures/HOJASCEREZO03.png",
-    "/textures/HOJASCEREZO04.png",
-    "/textures/HOJASCEREZO05.png",
-    "/textures/HOJASCEREZO06.png",
+    "textures/HOJASCEREZO01.png",
+    "textures/HOJASCEREZO02.png",
+    "textures/HOJASCEREZO03.png",
+    "textures/HOJASCEREZO04.png",
+    "textures/HOJASCEREZO05.png",
+    "textures/HOJASCEREZO06.png",
   ]);
 
   const count = 120;

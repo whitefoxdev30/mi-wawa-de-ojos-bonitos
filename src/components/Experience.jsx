@@ -1,6 +1,5 @@
 import { Environment, Float, OrbitControls } from "@react-three/drei";
 import { Book } from "./Book";
-import CherryLeaves from "./CherryLeaves";
 
 
 export const Experience = () => {
@@ -10,7 +9,6 @@ export const Experience = () => {
       <color attach="background" args={["transparent"]} />
 
       {/* Partículas mágicas */}
-      <CherryLeaves />
 
       {/* Libro flotando */}
       <Float

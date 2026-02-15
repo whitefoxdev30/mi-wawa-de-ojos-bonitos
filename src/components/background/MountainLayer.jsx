@@ -4,7 +4,7 @@ import * as THREE from "three";
 export default function MountainLayer() {
   const texture = useLoader(
     THREE.TextureLoader,
-    "/textures/mountains.png"   // solo montañas recortadas PNG
+    "textures/mountains.png"   // solo montañas recortadas PNG
   );
 
   return (
