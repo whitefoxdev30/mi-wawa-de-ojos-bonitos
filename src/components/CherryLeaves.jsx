@@ -32,6 +32,7 @@ export default function CherryLeaves() {
   }, [textures]);
 
   useFrame((state) => {
+
     leaves.forEach((leaf, i) => {
       leaf.position.y -= leaf.speed;
       leaf.position.x += Math.sin(state.clock.elapsedTime + i) * 0.01 + leaf.drift;
@@ -45,15 +46,20 @@ export default function CherryLeaves() {
     if (group.current) {
       group.current.children.forEach((mesh, i) => {
         mesh.position.copy(leaves[i].position);
-        mesh.rotation.z += leaves[i].rotationSpeed;
+
+        // 🔥 Mantener orientación hacia cámara
+        mesh.quaternion.copy(state.camera.quaternion);
+
+        mesh.rotateZ(leaves[i].rotationSpeed);
       });
     }
+
   });
 
   return (
     <group ref={group}>
       {leaves.map((leaf, i) => (
-        <mesh key={i} position={leaf.position}>
+        <mesh key={i}>
           <planeGeometry args={[leaf.size, leaf.size]} />
           <meshBasicMaterial
             map={leaf.texture}
