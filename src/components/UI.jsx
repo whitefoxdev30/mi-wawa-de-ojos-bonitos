@@ -48,8 +48,12 @@ export const UI = () => {
   useEffect(() => {
     const audio = new Audio(asset("audios/page-flip-01a.mp3"));
     audio.volume = 0.3;
-    audio.play();
+
+    audio.play().catch(() => {
+      // Ignorar error si el navegador bloquea autoplay
+    });
   }, [page]);
+
 
   return (
     <>

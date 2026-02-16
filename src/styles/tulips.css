@@ -1,0 +1,257 @@
+/* TULIPANES TIPO RAMO DE LOS COSTADOS */
+
+.tulips-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 28;
+}
+
+.tulip-side img {
+    filter: drop-shadow(0 0 10px rgba(255, 120, 180, 0.3));
+    position: absolute;
+    bottom: 0;
+    pointer-events: none;
+    transform-origin: bottom center;
+}
+
+
+/* LADO IZQUIERDO */
+
+.left img:nth-child(1) {
+    left: 0px;
+    transform: rotate(-8deg);
+}
+
+.left img:nth-child(2) {
+    left: 30px;
+    transform: rotate(-3deg);
+}
+
+.left img:nth-child(3) {
+    left: 60px;
+    transform: rotate(4deg);
+}
+
+.left img:nth-child(4) {
+    left: 90px;
+    transform: rotate(-6deg);
+}
+
+.left img:nth-child(5) {
+    left: 120px;
+    transform: rotate(3deg);
+}
+
+
+/* LADO DERECHO */
+
+.right img:nth-child(1) {
+    right: 0px;
+    transform: rotate(8deg);
+}
+
+.right img:nth-child(2) {
+    right: 30px;
+    transform: rotate(3deg);
+}
+
+.right img:nth-child(3) {
+    right: 60px;
+    transform: rotate(-4deg);
+}
+
+.right img:nth-child(4) {
+    right: 90px;
+    transform: rotate(6deg);
+}
+
+.right img:nth-child(5) {
+    right: 120px;
+    transform: rotate(-3deg);
+}
+
+
+
+/* MOVIMIENTO DIFERENTE PARA CADA FLOR */
+
+.tulip-side img:nth-child(1) {
+    --r: -8deg;
+    --amp: 3deg;
+    animation: sway 3s ease-in-out infinite;
+}
+
+.tulip-side img:nth-child(2) {
+    --r: -3deg;
+    --amp: 2deg;
+    animation: sway 4.5s ease-in-out infinite;
+}
+
+.tulip-side img:nth-child(3) {
+    --r: 4deg;
+    --amp: 4deg;
+    animation: sway 3.8s ease-in-out infinite;
+}
+
+.tulip-side img:nth-child(4) {
+    --r: -6deg;
+    --amp: 5deg;
+    animation: sway 5s ease-in-out infinite;
+}
+
+.tulip-side img:nth-child(5) {
+    --r: 3deg;
+    --amp: 2deg;
+    animation: sway 3.2s ease-in-out infinite;
+}
+
+.tulip-side img:nth-child(6) {
+    --r: 6deg;
+    --amp: 4deg;
+    animation: sway 4.8s ease-in-out infinite;
+}
+
+.tulip-side img:nth-child(7) {
+    --r: -5deg;
+    --amp: 3deg;
+    animation: sway 3.6s ease-in-out infinite;
+}
+
+
+/* Base tulip */
+.tulip {
+    margin: -5px;
+    /* antes -20px */
+    animation: sway 3s ease-in-out infinite;
+    transform-origin: bottom center;
+}
+
+
+/* Tamaños */
+.tulip.small {
+    width: 80px;
+}
+
+.tulip.medium {
+    width: 110px;
+}
+
+.tulip.big {
+    width: 140px;
+}
+
+/* Superposición */
+.offset1 {
+    transform: translateX(-15px);
+}
+
+.offset2 {
+    transform: translateX(15px);
+}
+
+/* Movimiento romántico */
+@keyframes sway {
+    0% {
+        transform: rotate(var(--r)) translateY(0px);
+    }
+
+    50% {
+        transform: rotate(calc(var(--r) + var(--amp))) translateY(-6px);
+    }
+
+    100% {
+        transform: rotate(var(--r)) translateY(0px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* 🔥 tulipanes posicion de abajo */
+.bottom-grass {
+    position: fixed;
+    bottom: -5px;
+    /* más al filo */
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 28;
+}
+
+/* 🔥 Aquí está la magia */
+.grass-flower {
+    margin-left: -60px;
+    /* esto las junta */
+}
+
+/* Tamaños diferentes */
+.grass-flower.small {
+    max-height: 70px;
+}
+
+.grass-flower.medium {
+    max-height: 100px;
+}
+
+.grass-flower.big {
+    max-height: 140px;
+}
+
+/* Movimiento orgánico */
+@keyframes swayGrass {
+    0% {
+        transform: rotate(-2deg) translateY(0px);
+    }
+
+    50% {
+        transform: rotate(2deg) translateY(-6px);
+    }
+
+    100% {
+        transform: rotate(-2deg) translateY(0px);
+    }
+}
+
+.grass-flower:nth-child(odd) {
+    animation: swayGrass 3s ease-in-out infinite;
+}
+
+.grass-flower:nth-child(even) {
+    animation: swayGrass 4.5s ease-in-out infinite;
+}
+
+
+
+
+/* Luces de los tulipanes*/
+
+.grass-flower,
+.tulip-side img {
+    filter:
+        drop-shadow(0 0 10px rgba(255, 120, 200, 0.6)) drop-shadow(0 0 25px rgba(255, 80, 160, 0.5)) drop-shadow(0 0 40px rgba(255, 60, 150, 0.3));
+
+    animation: glowPlant 4s ease-in-out infinite alternate;
+}
+
+@keyframes glowPlant {
+    0% {
+        filter:
+            drop-shadow(0 0 6px rgba(255, 120, 200, 0.4)) drop-shadow(0 0 15px rgba(255, 80, 160, 0.3));
+    }
+
+    100% {
+        filter:
+            drop-shadow(0 0 15px rgba(255, 120, 200, 0.8)) drop-shadow(0 0 35px rgba(255, 60, 150, 0.6));
+    }
+}

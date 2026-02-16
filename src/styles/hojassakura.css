@@ -1,0 +1,35 @@
+
+.magical-text {
+  position: relative;
+  color: #fff0fa;
+  text-shadow:
+    0 0 5px #ffb3f0,
+    0 0 15px #ff66cc,
+    0 0 30px #d946ef,
+    0 0 60px #ff80df,
+    0 0 90px rgba(255, 120, 200, 0.8);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+
+.particle {
+  opacity: 0.8;
+
+  filter:
+    drop-shadow(0 0 6px rgba(255, 160, 200, 0.6)) drop-shadow(0 0 15px rgba(255, 120, 180, 0.4));
+
+  animation: leafGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes leafGlow {
+  0% {
+    filter:
+      drop-shadow(0 0 4px rgba(255, 160, 200, 0.4)) drop-shadow(0 0 10px rgba(255, 120, 180, 0.3));
+  }
+
+  100% {
+    filter:
+      drop-shadow(0 0 10px rgba(255, 160, 200, 0.8)) drop-shadow(0 0 25px rgba(255, 120, 180, 0.6));
+  }
+}
+

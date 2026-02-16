@@ -6,7 +6,7 @@ export const Experience = () => {
   return (
     <>
       {/* Fondo mágico */}
-      <color attach="background" args={["transparent"]} />
+      {/* <color attach="background" args={["transparent"]} /> */}
 
       {/* Partículas mágicas */}
 

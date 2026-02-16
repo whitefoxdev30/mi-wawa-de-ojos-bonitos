@@ -1,0 +1,60 @@
+.mountains-layer {
+  position: absolute;
+  bottom: 30%; /* justo arriba del lago */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: 100%;
+  height: 40%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  z-index: 9;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Imagen montaña */
+.mountain {
+  width: clamp(900px, 70vw, 1400px);
+  height: auto;
+
+  opacity: 0.9;
+
+  object-fit: contain;
+
+  /* Fade lateral suave */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+
+  filter: blur(0.5px) brightness(0.95);
+}
+
+@media (max-width: 768px) {
+  .mountains-layer {
+    bottom: 25%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .mountains-layer {
+    bottom: 40%;
+    width: 180%;
+  }
+}

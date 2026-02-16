@@ -1,0 +1,118 @@
+.stars-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 5; /* debajo de luna pero sobre fondo */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.9;
+
+  box-shadow:
+    0 0 8px white,
+    0 0 16px rgba(255,255,255,0.9),
+    0 0 30px rgba(200,150,255,0.8),
+    0 0 60px rgba(200,150,255,0.5);
+
+  animation: twinkle 4s infinite ease-in-out;
+}
+
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.6);
+  }
+}
+
+
+/* Posición aleatoria */
+.star:nth-child(n) {
+  top: calc(100% * var(--rand-y));
+  left: calc(100% * var(--rand-x));
+}
+
+
+
+
+.comet {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 5;
+
+  box-shadow:
+    0 0 20px white,
+    0 0 40px rgba(255,255,255,0.9),
+    0 0 80px rgba(200,150,255,0.8),
+    0 0 150px rgba(200,150,255,0.6);
+}
+
+.comet::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -150px;
+  width: 150px;
+  height: 3px;
+
+  background: linear-gradient(
+    to left,
+    white,
+    rgba(255,255,255,0.6),
+    rgba(200,150,255,0.3),
+    transparent
+  );
+
+  filter: blur(1px);
+}
+
+
+@keyframes cometMove {
+  0% {
+    transform: translate(-30vw, -10vh) rotate(35deg);
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(130vw, 70vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+
+
+.comet-1 {
+  top: 8%;
+  left: -20%;
+  animation: cometMove 8s linear infinite;
+  animation-delay: 2s;
+}
+
+.comet-2 {
+  top: 20%;
+  left: -25%;
+  animation: cometMove 12s linear infinite;
+  animation-delay: 6s;
+}

@@ -1,3 +1,5 @@
+import { asset } from "../utils/paths";
+
 export const Tulips = () => {
     return (
         <div className="tulips-container">

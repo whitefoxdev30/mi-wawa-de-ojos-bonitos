@@ -1,0 +1,128 @@
+.moon {
+  position: absolute;
+
+  top: -5%;
+  /* 🔥 más arriba */
+  left: 18%;
+  /* 🔥 más a la izquierda */
+  right: auto;
+
+  width: clamp(320px, 25vw, 600px);
+
+  z-index: 6;
+  /* debajo del libro si quieres profundidad */
+  pointer-events: none;
+
+  filter:
+    hue-rotate(35deg) saturate(1.5) brightness(1.2) drop-shadow(0 0 120px rgba(220, 150, 255, 0.8)) drop-shadow(0 0 240px rgba(200, 120, 255, 0.7)) drop-shadow(0 0 400px rgba(180, 100, 255, 0.6));
+
+  animation:
+    moonFloat 18s ease-in-out infinite alternate,
+    moonGlow 6s ease-in-out infinite alternate;
+}
+
+
+.moon::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle,
+      rgba(230, 170, 255, 0.4),
+      rgba(200, 120, 255, 0.25),
+      transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  animation: auraPulse 5s ease-in-out infinite alternate;
+}
+
+@keyframes auraPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+
+@keyframes moonFloat {
+  0% {
+    transform: translate(-50%, 0px) scale(1);
+  }
+
+  100% {
+    transform: translate(-50%, -25px) scale(1.05);
+  }
+}
+
+@keyframes moonGlow {
+  0% {
+    filter:
+      hue-rotate(35deg) saturate(1.4) brightness(1.1) drop-shadow(0 0 100px rgba(220, 150, 255, 0.6)) drop-shadow(0 0 200px rgba(200, 120, 255, 0.5));
+  }
+
+  100% {
+    filter:
+      hue-rotate(35deg) saturate(1.7) brightness(1.3) drop-shadow(0 0 160px rgba(230, 170, 255, 0.8)) drop-shadow(0 0 300px rgba(200, 120, 255, 0.7));
+  }
+}
+
+
+@media (max-width: 768px) {
+  .moon {
+    top: 6%;
+    left: 10%;
+    width: 55vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .moon {
+    top: 5%;
+    left: 5%;
+    width: 65vw;
+  }
+}
+
+
+
+.moon {
+  overflow: visible;
+}
+
+.moon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  box-shadow:
+    0 0 10px white,
+    0 0 20px #d8b4ff,
+    0 0 40px #c084fc,
+    0 0 80px #a855f7;
+  animation: sparkle 3s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+}
