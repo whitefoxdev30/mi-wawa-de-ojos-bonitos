@@ -2,8 +2,8 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 40%;
-  z-index: 8;
+  height: 35vh; /* 🔥 más estable que % */
+  z-index: 7;
   overflow: hidden;
 
   /* 💎 Azul cristalino nocturno */
@@ -109,4 +109,17 @@
 @keyframes waveMove {
   0% { transform: translateX(-5%); }
   100% { transform: translateX(5%); }
+}
+
+
+@media (max-width: 768px) {
+  .lake {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .lake {
+    height: 55vh;
+  }
 }

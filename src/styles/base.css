@@ -39,30 +39,51 @@
 }
 
 
-
-
-
-
-
-h1 {
-  text-shadow:
-    0 0 8px rgba(255, 255, 255, 0.4),
-    0 0 20px rgba(255, 255, 255, 0.2);
-}
-
 canvas {
   position: absolute;
   z-index: 29;
 }
 
 
+@keyframes glow {
+  0%, 100% {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 15px #fff,
+      0 0 30px rgba(255,255,255,0.9);
+  }
+  50% {
+    text-shadow:
+      0 0 10px #fff,
+      0 0 25px #fff,
+      0 0 60px rgba(255,255,255,1);
+  }
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glowSoft {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255,255,255,0.6);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(255,255,255,0.9);
+  }
+}
+
+.animate-glow-soft {
+  animation: glowSoft 4s ease-in-out infinite;
+}
+
 
 .ui-container {
   position: relative;
-  z-index: 30;
+  z-index: 31;
   text-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.7),
-    0 0 20px rgba(255, 255, 255, 0.2);
+    0 4px 12px rgba(255, 0, 0, 0.7),
+    0 0 20px rgba(255, 0, 0, 0.2);
 }
 
 .ui-container::before {

@@ -2,43 +2,44 @@ export default function CherryTreesLayer() {
   return (
     <div className="trees-layer">
 
-      {/* FONDO - árboles lejanos */}
+      {/* LADO IZQUIERDO */}
+
       <img
         src="textures/arbol_cerezo.png"
-        className="tree tree-far"
+        className="tree tree-close"
+        style={{ left: "-5%" }}
+      />
+
+      <img
+        src="textures/arbol_cerezo.png"
+        className="tree tree-mid"
         style={{ left: "10%" }}
       />
 
       <img
         src="textures/arbol_cerezo.png"
         className="tree tree-far"
-        style={{ left: "70%" }}
+        style={{ left: "18%" }}
       />
 
-      {/* MEDIO */}
-      <img
-        src="textures/arbol_cerezo.png"
-        className="tree tree-mid"
-        style={{ left: "25%" }}
-      />
-
-      <img
-        src="textures/arbol_cerezo.png"
-        className="tree tree-mid"
-        style={{ left: "60%" }}
-      />
-
-      {/* CERCA */}
-      <img
-        src="textures/arbol_cerezo.png"
-        className="tree tree-close"
-        style={{ left: "5%" }}
-      />
+      {/* LADO DERECHO */}
 
       <img
         src="textures/arbol_cerezo.png"
         className="tree tree-close"
-        style={{ left: "75%" }}
+        style={{ right: "-5%" }}
+      />
+
+      <img
+        src="textures/arbol_cerezo.png"
+        className="tree tree-mid"
+        style={{ right: "10%" }}
+      />
+
+      <img
+        src="textures/arbol_cerezo.png"
+        className="tree tree-far"
+        style={{ right: "18%" }}
       />
 
     </div>
